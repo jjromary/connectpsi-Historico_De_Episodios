@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         --Snow1: #FFFAFA;
 
         --text-title: #363f5f;
-        --text-boody: #969cb3;
+        --text-body: #969cb3;
 
         --shape: #FFFFFF;
     }

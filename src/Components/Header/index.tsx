@@ -6,10 +6,7 @@ export function Header() {
     return (
         <Container>
             <Content>
-                <img src={logoImg} alt="connectpsi" />
-                <button type="button">
-                    Nova anotação
-                </button>
+                <img src={logoImg} alt="connectpsi" />                
             </Content>
         </Container>
     );

@@ -1,7 +1,10 @@
 import { Container } from "./styles";
 
+interface AnotationProps {
+    onOpenNewAnotationModal: ()=> void;
+}
 
-export function Anotations() {
+export function Anotations({onOpenNewAnotationModal}: AnotationProps) { 
     return (
         <Container>
             <div>
@@ -23,9 +26,10 @@ export function Anotations() {
                 <strong>7 </strong>
             </div>
             
-            <button type="button">
+            <button type="button" onClick={onOpenNewAnotationModal}>
                     <p>Nova anotação</p>
             </button>
+            
             
         </Container>
     );

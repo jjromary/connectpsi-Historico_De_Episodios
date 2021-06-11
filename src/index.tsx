@@ -1,23 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createServer } from 'miragejs'
+import { createServer, Model } from 'miragejs'
 import App from './App';
 
 
 
 createServer({
+  models: {
+    anotation: Model,
+  },
+
+
   routes() {
     this.namespace = 'api';
 
     this.get('/anotations', () => {
-      return[
-        {
-          id: 1,
-          covered: Boolean,
-          title: 'Anotation 1',
-          createdAt: new Date()
-        }
-      ]
+      return this.schema.all('anotation')
+    })
+
+    this.post('/anotations', (schema, request) => {
+      const data = JSON.parse(request.requestBody)
+
+      return schema.create('anotation', data)
     })
   }
 })

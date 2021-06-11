@@ -8,8 +8,8 @@ export const Container = styled.div`
       
       div{      
          font-weight:400 ;
-         border-spacing: 1rem 0.5rem;
-         padding: 1rem 2rem;
+         border-spacing: 1rem; 
+         padding: 1rem 1rem;
          text-align: left;
          line-height: 1.5rem;
          background: var(--shape);
@@ -41,10 +41,9 @@ export const Container = styled.div`
          } 
 
          p {
-            padding: 1rem 2rem;
-            border: 0;
+            padding: 0.5rem 0.5rem; 
             color: var(--text-body);
-            display: inline-block;
+            display: inline-block;          
 
             white-space: nowrap;
             width: 90%;
@@ -62,7 +61,7 @@ export const Container = styled.div`
             border: 0;
             font-weight: bold;
             border-radius: 0.25rem;
-            padding: 1rem 0.5rem;
+            padding: 0.5rem 0.5rem;
             
 
             transition: filter 0.2s;

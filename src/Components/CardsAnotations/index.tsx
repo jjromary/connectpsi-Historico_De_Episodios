@@ -21,17 +21,21 @@ export function CardsAnotations() {
 
     return (
         <Container>
-            <div className="cards">
+            
                 {anotations.map(anotation => (
                     <div key={anotation.id}>
                         <h3>{anotation.title}</h3>
-                        <p>{anotation.anotation}</p>
-                        <button type="button">Editar</button>
-                        <button type="button">Excluir</button>
+                        <div className="anotation">
+                            <span>{anotation.anotation}</span>
+                        </div>
+                        <div className="buttons">
+                            <button type="button">Editar</button>
+                            <button type="button">Excluir</button>
+                        </div>
                     </div>
 
                 ))}
-            </div>
+            
         </Container>
     );
 

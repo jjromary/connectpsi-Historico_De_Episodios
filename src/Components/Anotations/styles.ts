@@ -26,6 +26,8 @@ export const Container = styled.main`
         border-radius: 0.25rem;
         color: var(--text-title);
 
+        
+
         header {
             display: flex;
             align-items: center;

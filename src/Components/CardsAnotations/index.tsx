@@ -1,23 +1,8 @@
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import { useAnotations } from "../../hooks/useAnotations";
 import { Container } from "./styles";
 
-
-interface Anotation {
-    id: number;
-    title: string;
-    anotation: string;
-    createdAt: string;
-}
-
 export function CardsAnotations() {
-
-    const [anotations, setAnotations] = useState<Anotation[]>([]);
-
-    useEffect(() => {
-        api.get('anotations')
-            .then(response => setAnotations(response.data.anotations))
-    }, []);
+    const { anotations } = useAnotations();    
 
     return (
         <Container>

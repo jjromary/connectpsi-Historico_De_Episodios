@@ -1,3 +1,4 @@
+import { useAnotations } from "../../hooks/useAnotations";
 import { Container } from "./styles";
 
 interface AnotationProps {
@@ -5,25 +6,47 @@ interface AnotationProps {
 }
 
 export function Anotations({onOpenNewAnotationModal}: AnotationProps) { 
+    const { anotations } = useAnotations();
+
+    const sumary = anotations.reduce((acc, anotation) => {
+        if(anotation.covered === 'nao') {
+            acc.naoAbordado ++ ;
+            acc.total ++;
+        } else {
+            acc.abordado ++;
+            acc.total ++;
+        }
+
+        return acc;
+    }, {
+        abordado: 0,
+        naoAbordado: 0,
+        total: 0,
+
+
+    })
+
+    
+
     return (
         <Container>
             <div>
                 <header>
                     <p>Anotações feitas</p>
                 </header>
-                <strong>10 </strong>
+                <strong>{sumary.total}  </strong>
             </div>
             <div>
                 <header>
                     <p>Anotações abordadas</p>
                 </header>
-                <strong>3 </strong>
+                <strong>{sumary.abordado} </strong>
             </div>
             <div>
                 <header>
                     <p>Anotações não abordadas</p>
                 </header>
-                <strong>7 </strong>
+                <strong>{sumary.naoAbordado}</strong>
             </div>
             
             <button type="button" onClick={onOpenNewAnotationModal}>

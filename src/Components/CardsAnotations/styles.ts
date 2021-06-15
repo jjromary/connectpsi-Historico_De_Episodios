@@ -25,14 +25,13 @@ export const Container = styled.div`
          }
 
          .anotation{
-            max-width: 60%;
-            min-width: 10%;
+            width: 60%;
             margin: 1rem 1rem;
             
 
             span {
                padding: 0.2rem 0rem; 
-               color: var(--text-body);   
+               color: var(--text-body);  
                font-weight: 500;
                font-size: 1rem;
                

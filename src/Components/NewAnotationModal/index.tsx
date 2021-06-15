@@ -1,12 +1,14 @@
+import { FormEvent, useState } from 'react';
+import { useAnotations } from '../../hooks/useAnotations';
 import Modal from 'react-modal'
-import closeImg from '../../assets/close.svg';
 
+import closeImg from '../../assets/close.svg';
 import noChecked from "../../assets/noChecked.svg"
 import Checked from "../../assets/checked.svg"
 
 import { Container, AnotationsTypeContainer, RadioBox } from './styles'
-import { FormEvent, useState } from 'react';
-import { api } from '../../services/api';
+
+
 
 interface NewAnotationModalProps {
     isOpen: boolean;
@@ -14,22 +16,27 @@ interface NewAnotationModalProps {
 }
 
 export function NewAnotationModal({isOpen, onRequestClose}: NewAnotationModalProps) {
+    const { createAnotation } = useAnotations();
+    
     const [title, setTitle] = useState('');
     const [anotation, setAnotation] = useState('');
     const [covered, setCovered] = useState('nao');
 
-    function handleCreateNewAnotation(event: FormEvent) {
+    async function handleCreateNewAnotation(event: FormEvent) {
         event.preventDefault();
 
-        const data = ({
-            title,
-            anotation,
-            covered,
-        });
-
-        api.post('/anotations', data)
-    }
-    
+        await createAnotation({
+             title,
+             anotation,
+             covered,
+        }) 
+        
+        setTitle('');
+        setAnotation('');
+        setCovered('nao');
+        onRequestClose();
+        
+    }    
     
     return(
         <Modal 

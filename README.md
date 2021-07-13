@@ -43,3 +43,10 @@ $ yarn start
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 
 ```
+
+## 📝 Licença
+
+Este projeto esta sobe a licença MIT.
+
+Feito com ❤️ por José Romary Brandão 👋🏽 [Entre em contato!](https://www.linkedin.com/in/jos%C3%A9-romary-brand%C3%A3o/)
+

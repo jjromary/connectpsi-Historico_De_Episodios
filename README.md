@@ -12,7 +12,7 @@
 
 ## 💻 Sobre o projeto
 
- - Plataforma onde eu posso criar um histórico de episódios a serem abordados durante a terapia com um(a) Psicólogo(a).
+ - Plataforma para criar históricos de episódios a serem abordados durante terapia com um(a) Terapeuta(a).
 
 
 ## 🛠 Tecnologias
